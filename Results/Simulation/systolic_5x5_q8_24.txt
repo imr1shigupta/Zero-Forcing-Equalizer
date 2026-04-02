@@ -1,0 +1,71 @@
+set_property top tb_systolic_5x5_q8_24 [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'tb_systolic_5x5_q8_24'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'E:/Verilog/equalizer_4/equalizer_4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'E:/Xilinx/Vivado/2024.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_systolic_5x5_q8_24' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/Verilog/equalizer_4/equalizer_4.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_systolic_5x5_q8_24_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '3' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/Verilog/equalizer_4/equalizer_4.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_systolic_5x5_q8_24_behav xil_defaultlib.tb_systolic_5x5_q8_24 xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2024.2.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: E:/Xilinx/Vivado/2024.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_systolic_5x5_q8_24_behav xil_defaultlib.tb_systolic_5x5_q8_24 xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'E:/Verilog/equalizer_4/equalizer_4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_systolic_5x5_q8_24_behav -key {Behavioral:sim_1:Functional:tb_systolic_5x5_q8_24} -tclbatch {tb_systolic_5x5_q8_24.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_systolic_5x5_q8_24.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+
+--- Input Matrix A (Real Q8.24) ---
+0.500000 1.250000 2.000000 -0.750000 1.100000
+0.000000 1.000000 0.000000 0.000000 0.000000
+0.000000 0.000000 1.000000 0.000000 0.000000
+0.000000 0.000000 0.000000 1.000000 0.000000
+0.000000 0.000000 0.000000 0.000000 1.000000
+
+--- Input Matrix B (Real Q8.24) ---
+0.100000 0.150000 0.200000 0.250000 0.300000
+0.200000 0.250000 0.300000 0.350000 0.400000
+0.300000 0.350000 0.400000 0.450000 0.500000
+0.400000 0.450000 0.500000 0.550000 0.600000
+0.500000 0.550000 0.600000 0.650000 0.700000
+
+--- Output Matrix C (Q8.24 Calculated) ---
+1.150000 1.355000 1.560000 1.765000 1.970000
+0.200000 0.250000 0.300000 0.350000 0.400000
+0.300000 0.350000 0.400000 0.450000 0.500000
+0.400000 0.450000 0.500000 0.550000 0.600000
+0.500000 0.550000 0.600000 0.650000 0.700000
+$finish called at time : 270 ns : File "E:/Verilog/equalizer_4/equalizer_4.srcs/sources_1/new/tb_systolic_5x5_q8_24.v" Line 107
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_systolic_5x5_q8_24_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:11 . Memory (MB): peak = 3818.742 ; gain = 0.000

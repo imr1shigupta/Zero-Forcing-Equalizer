@@ -1,0 +1,72 @@
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'tb_complete_zfe'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'E:/Verilog/equalizer_4/equalizer_4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'E:/Xilinx/Vivado/2024.2/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_complete_zfe' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/Verilog/equalizer_4/equalizer_4.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj tb_complete_zfe_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '4' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/Verilog/equalizer_4/equalizer_4.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_complete_zfe_behav xil_defaultlib.tb_complete_zfe xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2024.2.0
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: E:/Xilinx/Vivado/2024.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_complete_zfe_behav xil_defaultlib.tb_complete_zfe xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '5' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'E:/Verilog/equalizer_4/equalizer_4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_complete_zfe_behav -key {Behavioral:sim_1:Functional:tb_complete_zfe} -tclbatch {tb_complete_zfe.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source tb_complete_zfe.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+
+--- Original Matrix A (Real Format) ---
+1.001271 0.007568 0.017735 0.030985 -0.006562 
+0.755281 1.001271 0.007568 0.017735 0.030985 
+0.245577 0.755281 1.001271 0.007568 0.017735 
+0.031509 0.245577 0.755281 1.001271 0.007568 
+0.018076 0.031509 0.245577 0.755281 1.001271 
+xsim: Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 1256.977 ; gain = 75.109
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_complete_zfe_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:10 ; elapsed = 00:00:16 . Memory (MB): peak = 1256.977 ; gain = 75.109
+run all
+
+--- Inverse Matrix A^-1 (Real Format) ---
+1.001481 -0.004862 0.007872 -0.036130 0.006848
+-0.756121 1.005186 -0.010179 0.032925 -0.036130
+0.325512 -0.757884 1.004441 -0.010179 0.007872
+-0.091568 0.325996 -0.757884 1.005186 -0.004862
+-0.005050 -0.091568 0.325512 -0.756121 1.001481
+
+Starting Systolic Pulse for Weights...
+
+--- Calculated ZFE Weights (Real Format) ---
+w0: 1.001481, w1: -0.756121, w2: 0.325512, w3: -0.091568, w4: -0.005050
+
+Starting Hardware Equalization Stream...
+Equalization Complete. All data processed and output written.
+$finish called at time : 692985 ns : File "E:/Verilog/equalizer_4/equalizer_4.srcs/sources_1/new/tb_complete_zfe.v" Line 221
