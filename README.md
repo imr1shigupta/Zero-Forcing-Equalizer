@@ -629,7 +629,6 @@ ZFE\_repo/
 │   ├── Communication System Simulation.mlx    # MATLAB Live Script (dual-part)
 │   │   └── Part 1 (Lines 1-135):   Signal generation \& channel simulation
 │   │   └── Part 2 (Lines 136-155): Equalized signal reception \& display
-│   └── VLSIDSP\_Q8\_24.mlx                     # MATLAB analysis of Q8.24 format
 │
 ├── VERILOG HARDWARE - SYNTHESIZABLE MODULES
 │   ├── lu\_inverse\_5x5\_q8\_24.v                # LU Decomposition for 5×5 matrix inversion
